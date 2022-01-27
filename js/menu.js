@@ -7,5 +7,5 @@ const menu = document.querySelector('.menu');
 	})
 
 	menu_btn.addEventListener('click', () =>{
-		menu.classList.toggle('.active')
+		menu.classList.toggle('active')
 	})

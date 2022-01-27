@@ -4,7 +4,11 @@
 	font-family: blippo;
 	src: url(../assets/fonts/blippo.woff2);
 }
-
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 :root {
 	--color-primario: #264c71; /*Azul*/
 	--color-secundario: #209e32; /*Verde*/
@@ -28,24 +32,27 @@ header {
 .nav_bar {
 	position: fixed;
 	width: 100%;
-	height: 10vh;
+	/*height: 10vh;*/
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 3px 25px 3px 25px;
-	margin: -21px 0px 0px -8px;
-	background: none;
+	padding: 25 px;
+	/*margin: -21px 0px 0px -8px;*/
 	background-color: #1fa032cb;
+	transition: all 0.5s ease;
 }
 .nav_bar div {
-	padding: 10px 20px 0 0;
-}
-.nav_bar.active {
-	background: #fff;
 	padding: 15px;
 }
+.nav_bar.active {
+	background: transparent;
+	padding: 15px;
+	transition: 0.5 ease;
+	text-shadow: 2px 2px 8px #000;
+}
 .nav_bar.active .nav_bar.logo,
-.nav_bar.active a {
+.nav_bar.active a,
+.nav_bar.active .menu_btn i {
 	color: #000;
 }
 .nav_bar.active a:hover {
@@ -57,9 +64,8 @@ header {
 }
 .nav_bar-logo {
 	display: flex;
-
 	transition: 0.5 ease;
-	padding: 0px;
+	padding: 0 15px 0 15px;
 	font-family: "blippo", sans-serif;
 	align-items: center;
 }
@@ -122,10 +128,16 @@ header {
 }
 
 section {
-	padding: 1vw;
+	justify-content: space-between;
 }
 section div {
 	background-color: #f6f6f6;
+}
+section h3 {
+	padding: 1.5vw;
+}
+section p {
+	padding: 1vw;
 }
 footer {
 	padding: 1vw;
@@ -143,6 +155,11 @@ footer p {
 	padding: 1vw;
 	text-align: justify;
 }
+footer i {
+	color: var(--color-secundario);
+	font-size: 20px;
+	cursor: pointer;
+}
 
 @media screen and (max-width: 1024px) {
 	.menu_btn {
@@ -154,6 +171,7 @@ footer p {
 		top: 0;
 		left: 0;
 		width: 300px;
+		height: 100vh;
 		background: #34a04477;
 		display: flex;
 		flex-direction: column;
@@ -164,8 +182,9 @@ footer p {
 	}
 	.menu li {
 		margin: 15px 0;
+		text-shadow: 2px 2px 8px #000;
 	}
 	.menu.active {
-		transform: translateX(0);
+		transform: translatex(0);
 	}
 }
