@@ -50,7 +50,7 @@ header {
 	transition: 0.5 ease;
 	text-shadow: 2px 2px 8px #000;
 }
-.nav_bar.active .nav_bar.logo,
+.nav_bar.active .nav_bar-logo,
 .nav_bar.active a,
 .nav_bar.active .menu_btn i {
 	color: #000;
@@ -165,7 +165,9 @@ footer i {
 	.menu_btn {
 		display: block;
 	}
-
+	.nav_bar-logo {
+		display: none;
+	}
 	.menu {
 		position: absolute;
 		top: 0;
